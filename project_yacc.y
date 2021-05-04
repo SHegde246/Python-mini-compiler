@@ -186,7 +186,7 @@
 	a<=9
 	etc
 	*/
-	//Here, the only information about the identifier that needs to change is the last used line. Scope, declared line, type remain the same, as we're not redefining/reassigning the identifier
+	//Here, the only information about the identifier that needs to change is the last used line. Scope, declared line, type remain the same, as we're not redefining/reassigning the identifier (the scope in which it was defined doesn't change, only the place of usage does)
 	/*It is a recursive function.
 	If the identifier is not found in the ST of the current scope,
 	it searches for it in the ST of the parent scope, recursively.
