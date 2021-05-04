@@ -166,6 +166,8 @@
 		int i =0;
 		for(i=0; i<symbolTables[index].noOfElements; i++)
 		{
+			//checking for type, too, because a Func_Name type and Identifier type may have the same name
+			//therefore, in case we have a function and an identifier with the same name, have to make sure that the name corresponds to an identifier
 			if((strcmp(symbolTables[index].Elements[i].type, type)==0) && (strcmp(symbolTables[index].Elements[i].name, name)==0))
 			{
 				return i;
@@ -234,20 +236,24 @@
 	a="hello"
 	b=[1,2,3]
 	*/
-	//inserts a new record into ST only if it's not found in any of the scopes
-	//else, if that identifier is already in one ST, it just updates the scope, type, declared line, last used line
-	/*void insertEntry(const char* type, const char *name, int lineNo, int scope)
+	//inserts a new record into a ST only if it's not found in current scope
+	//else, if that identifier is already in ST, it just updates the declared line, last used line
+	
+	//therefore, one identifier has only one entry in a particular scope (ST). 
+	//an identifier cannot have two entries in the same scope, but can have more than one entry if they all belong to different scopes
+	
+	void insertEntry(const char* type, const char *name, int lineNo, int scope)
 	{ 
 		//changed int FScope = power(scope, arrayScope[scope]);   //getting scope of identifier
 		//changed int index = scopeBasedTableSearch(FScope);      //finding appropriate ST, based on scope
 		
 		//added
-		int FScope = hashScope(scope);
-		int index = scopeBasedTableSearch(FScope);
+		int FScope = hashScope(scope);    //getting scope of identifier
+		int index = scopeBasedTableSearch(FScope);    //finding the ST, corresponding to that scope
 		
 		
-		int recordIndex = searchRecordInScope(type, name, index);
-		//if the identifier has never been seen before in that scope, create a new record entry for this identifier
+		int recordIndex = searchRecordInScope(type, name, index);    //finding the record for that identifier in the ST, if present
+		//if the identifier has never been seen before in that scope, create a new record entry for the identifier
 		if(recordIndex==-1)
 		{
 			
@@ -261,99 +267,13 @@
 			symbolTables[index].noOfElements++;
 
 		}
-		//otherwise, it just updates the type, declared line, and line of last use
+		//otherwise, if the identifier has alrady been defined in that scope, it just updates the declared line, and line of last use
 		else
 		{
-			strcpy(symbolTables[i].Elements[j].type, type);
 			symbolTables[index].Elements[recordIndex].lineno_declared = lineNo;
 			symbolTables[index].Elements[recordIndex].lastUseLine = lineNo;
 		}
-	}*/
-	
-//********************************************************************************************************************	
-	//below function inserts each identifier only once. slightly flawed, as it should insert multiple times if they're in different scopes, but it doesn't.
-	/*(ex-
-	1 a=10
-	2 if condition:
-	3	a=20
-		
-	below function inserts 'a' only once, and says it's been declared at line 3. but if the condition is false, the compiler needs the definition at line 1. it won't be able to access it in this case, as there is only one entry for 'a'.
-	therefore, two entries for 'a' needed, for two different scopes (line 1, line 3). based on the flow of control, compiler can access the correct definition.
-	therefore, the function needs to search for the identifier in the current scope. if found, just update its declared line, last used line, and type.
-	if it's not found in the current scope, create a new record entry for this identifier, in this scope 
-	*/
-	void insertEntry(const char* type, const char *name, int lineNo, int scope)
-	{ 
-		
-		
-		//added
-		int FScope = hashScope(scope);  //to get the hashed scope of current line
-		int index = scopeBasedTableSearch(FScope);   //to get the corresponding ST, based on scope
-		
-		
-		
-		//*****************
-		
-		int foundflag=0;
-		int freedflag=0;
-		
-		//search for the identifier's entry in a ST, if present
-		//(if identifier seen before, in some scope)
-		int i, j;
-		//for each ST
-		for(i=0; i<=sIndex && !foundflag; i++)
-		{
-			//for each record in ST
-			for(j=0; j<symbolTables[i].noOfElements && !foundflag; j++)
-			{
-				//if the identifier is found
-				if(strcmp(symbolTables[i].Elements[j].name, name)==0)
-				{
-					foundflag = 1;
-				
-					//if the scope of redefined identifier is the same as its previous definition (if scope of current ST matches scope of redefined identifier)
-					//(we can just modify the entry for this identifier in the current ST, as the scope doesn't change)
-					if(symbolTables[i].STscope == scope)
-					{
-						
-						strcpy(symbolTables[i].Elements[j].type, type);
-						symbolTables[i].Elements[j].lineno_declared = lineNo;
-						symbolTables[i].Elements[j].lastUseLine = lineNo;
-						
-					}
-					//if a previous definition is found, but its scope is different from the scope of the new definition
-					//have to delete old entry, and create new entry in different ST (based on scope) (creating done in next block)
-					else
-					{
-						freedflag=1;
-						
-						free(symbolTables[i].Elements[j].name);
-						free(symbolTables[i].Elements[j].type);
-					}
-				
-					
-				}
-			}
-		}
-		
-		//if the identifier has never been seen before in any scope/if redefining is in different scope, create new record entry in appropriate ST (based on scope)
-		if(foundflag==0 || freedflag==1)
-		//if(recordIndex==-1)
-		{
-			
-			symbolTables[index].Elements[symbolTables[index].noOfElements].type = (char*)calloc(30, sizeof(char));
-			symbolTables[index].Elements[symbolTables[index].noOfElements].name = (char*)calloc(20, sizeof(char));
-			strcpy(symbolTables[index].Elements[symbolTables[index].noOfElements].type, type);	
-			strcpy(symbolTables[index].Elements[symbolTables[index].noOfElements].name, name);
-			
-			symbolTables[index].Elements[symbolTables[index].noOfElements].lineno_declared = lineNo;
-			symbolTables[index].Elements[symbolTables[index].noOfElements].lastUseLine = lineNo;
-			symbolTables[index].noOfElements++;
-
-		}
 	}
-//********************************************************************************************************************
-	
 	
 		
 	
