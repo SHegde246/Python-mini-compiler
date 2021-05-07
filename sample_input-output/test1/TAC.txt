@@ -1,0 +1,118 @@
+-------------------------------------------------------------Three Address Code--------------------------------------------------------------
+import mymodule
+Begin Function foo
+Begin Function bar
+T4 = False
+q = T4
+T7 = "stringify"
+r = T7
+Begin Function baz
+End Function baz
+End Function bar
+End Function foo
+(T30)Call Function foo
+T31 = True
+x = T31
+T34 = "this is a string"
+z = T34
+T37 = 3
+T38 = 4
+T39 = T37 * T38
+c = T39
+T42 = 18
+s = T42
+T42 = s
+T42 = s
+T47 = T42 + T42
+t = T47
+T50 = 100
+T51 = 15
+T52 = T50 + T51
+u = T52
+T55 = 5
+a = T55
+T58 = 10
+b = T58
+T55 = a
+T62 = 5
+T63 = T55 == T62
+T58 = b
+T65 = 8
+T66 = T58 > T65
+T67 = T63 and T66
+If False T67 goto L0
+T68 = 9
+a = T68
+T71 = 20
+b = T71
+goto L1
+L0: T55 = a
+T81 = 4
+T82 = T55 < T81
+If False T82 goto L0
+goto L1
+L0: L1: L1: T93 = 0
+item1 = T93
+
+L4: T93 = item1
+T93 = 0
+T145 = T93 >= T93
+If False T145 goto L5
+T93 = item1
+T94 = 2
+T146 = T93 < T94
+If False T146 goto L5
+T95 = 0
+item2 = T95
+
+L4: T95 = item2
+T95 = 0
+T138 = T95 >= T95
+If False T138 goto L5
+T95 = item2
+T96 = 4
+T139 = T95 < T96
+If False T139 goto L5
+T97 = 0
+item3 = T97
+
+L4: T97 = item3
+T97 = 0
+T131 = T97 >= T97
+If False T131 goto L5
+T97 = item3
+T98 = 6
+T132 = T97 < T98
+If False T132 goto L5
+T99 = 9
+e = T99
+T102 = 0
+item4 = T102
+
+L4: T102 = item4
+T102 = 0
+T123 = T102 >= T102
+If False T123 goto L5
+T102 = item4
+T103 = 8
+T124 = T102 < T103
+If False T124 goto L5
+T104 = 40
+f = T104
+T107 = 0
+item5 = T107
+
+L4: T107 = item5
+T107 = 0
+T115 = T107 >= T107
+If False T115 goto L5
+T107 = item5
+T108 = 5
+T116 = T107 < T108
+If False T116 goto L5
+goto L4
+L5: goto L4
+L5: goto L4
+L5: goto L4
+L5: goto L4
+L5: 

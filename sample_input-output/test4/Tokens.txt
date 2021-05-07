@@ -1,0 +1,15 @@
+
+---------------------------------------------------------------Tokens-----------------------------------------------------------------
+  1 T_a T_Assign T_1 T_NL
+  2 T_For T_i T_In T_Range T_OP T_0 T_Comma T_5 T_CP T_Colon T_NL
+  3 T_INDENT T_If T_a T_EQ T_1 T_Colon T_NL
+  4 T_INDENT T_a T_Assign T_a T_Plus T_1 T_NL
+  5 T_ND T_Print T_OP T_"a value set" T_CP T_NL
+  6 T_DEDENT T_Elif T_a T_EQ T_2 T_Colon T_NL
+  7 T_INDENT T_b T_Assign T_15 T_NL
+  8 T_ND T_Print T_OP T_"b value set" T_CP T_NL
+  9 T_DEDENT T_Else T_Colon T_NL
+  10 T_INDENT T_Print T_OP T_"nothing happened" T_CP T_NL
+  11 T_DEDENT T_NL
+  12 T_NL
+  13 T_EOF 

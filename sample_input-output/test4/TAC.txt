@@ -1,0 +1,32 @@
+-------------------------------------------------------------Three Address Code--------------------------------------------------------------
+T0 = 1
+a = T0
+T3 = 0
+i = T3
+
+L0: T3 = i
+T3 = 0
+T40 = T3 >= T3
+If False T40 goto L1
+T3 = i
+T4 = 5
+T41 = T3 < T4
+If False T41 goto L1
+T0 = a
+T6 = 1
+T7 = T0 == T6
+If False T7 goto L0
+T0 = a
+T9 = 1
+T10 = T0 + T9
+a = T10
+goto L1
+L0: T0 = a
+T19 = 2
+T20 = T0 == T19
+If False T20 goto L0
+T21 = 15
+b = T21
+goto L1
+L0: L1: L1: goto L0
+L1: 

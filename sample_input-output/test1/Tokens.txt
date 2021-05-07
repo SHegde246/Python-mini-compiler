@@ -1,0 +1,62 @@
+
+---------------------------------------------------------------Tokens-----------------------------------------------------------------
+  1 T_Import T_mymodule T_NL
+  2 T_NL
+  3 T_NL
+  4 T_Def T_foo T_OP T_CP T_Colon T_NL
+  5 T_INDENT T_Def T_bar T_OP T_CP T_Colon T_NL
+  6 T_INDENT T_q T_Assign T_False T_NL
+  7 T_ND T_r T_Assign T_"stringify" T_NL
+  8 T_ND T_Def T_baz T_OP T_CP T_Colon T_NL
+  9 T_INDENT T_Print T_OP T_p T_Comma T_"function" T_CP T_NL
+  10 T_DEDENT T_NL
+  11 T_DEDENT T_NL
+  12 T_NL
+  13 T_NL
+  14 T_foo T_OP T_CP T_NL
+  15 T_NL
+  16 T_NL
+  17 T_NL
+  18 T_NL
+  19 T_x T_Assign T_True T_NL
+  20 T_z T_Assign T_"this is a string" T_NL
+  21 T_NL
+  22 T_NL
+  23 T_c T_Assign T_3 T_Mult T_4 T_NL
+  24 T_NL
+  25 T_NL
+  26 T_s T_Assign T_18 T_NL
+  27 T_t T_Assign T_s T_Plus T_s T_NL
+  28 T_NL
+  29 T_NL
+  30 T_u T_Assign T_100 T_Plus T_15 T_NL
+  31 T_NL
+  32 T_NL
+  33 T_NL
+  34 T_a T_Assign T_5 T_NL
+  35 T_b T_Assign T_10 T_NL
+  36 T_NL
+  37 T_If T_OP T_a T_EQ T_5 T_CP T_And T_OP T_b T_GT T_8 T_CP T_Colon T_NL
+  38 T_INDENT T_a T_Assign T_9 T_NL
+  39 T_ND T_b T_Assign T_20 T_NL
+  40 T_ND T_Print T_OP T_"inside if" T_CP T_NL
+  41 T_Elif T_a T_LT T_4 T_Colon T_NL
+  42 T_INDENT T_Print T_OP T_"inside elif" T_CP T_NL
+  43 T_Else T_Colon T_NL
+  44 T_INDENT T_Pass T_NL
+  45 T_NL
+  46 T_NL
+  47 T_For T_item1 T_In T_Range T_OP T_0 T_Comma T_2 T_CP T_Colon T_NL
+  48 T_INDENT T_For T_item2 T_In T_Range T_OP T_0 T_Comma T_4 T_CP T_Colon T_NL
+  49 T_INDENT T_For T_item3 T_In T_Range T_OP T_0 T_Comma T_6 T_CP T_Colon T_NL
+  50 T_INDENT T_e T_Assign T_9 T_NL
+  51 T_ND T_For T_item4 T_In T_Range T_OP T_0 T_Comma T_8 T_CP T_Colon T_NL
+  52 T_INDENT T_f T_Assign T_40 T_NL
+  53 T_ND T_For T_item5 T_In T_Range T_OP T_0 T_Comma T_5 T_CP T_Colon T_NL
+  54 T_INDENT T_Print T_OP T_"nested loop" T_CP T_NL
+  55 T_DEDENT T_NL
+  56 T_DEDENT T_NL
+  57 T_DEDENT T_NL
+  58 T_DEDENT T_NL
+  59 T_NL
+  60 T_EOF 

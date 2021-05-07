@@ -1,0 +1,27 @@
+
+----------------------------------------------------------------------Symbol Table-----------------------------------------------------------------------
+
+Scope                              Name                               Data Type                          Type                               Declaration                        Last Used Line      
+
+1                                  1                                  int                                Constant                           4                                  4                   
+1                                  a                                  int                                Identifier                         4                                  6                   
+1                                  0                                  int                                Constant                           2                                  2                   
+1                                  5                                  int                                Constant                           2                                  2                   
+1                                  2                                  int                                Constant                           6                                  6                   
+1                                  15                                 int                                Constant                           7                                  7                   
+1                                  b                                  int                                Identifier                         7                                  7                   
+1                                  i                                  int                                Identifier                         2                                  2                   
+1                                  T0                                 TempVarType                        TempVar                            -1                                 -1                  
+1                                  T3                                 TempVarType                        TempVar                            -1                                 -1                  
+1                                  L0                                 N/A                                TempLabel                          -1                                 -1                  
+1                                  T40                                bool                               TempVar                            -1                                 -1                  
+1                                  L1                                 N/A                                TempLabel                          -1                                 -1                  
+1                                  T4                                 TempVarType                        TempVar                            -1                                 -1                  
+1                                  T41                                bool                               TempVar                            -1                                 -1                  
+1                                  T6                                 TempVarType                        TempVar                            -1                                 -1                  
+1                                  T7                                 bool                               TempVar                            -1                                 -1                  
+1                                  T9                                 TempVarType                        TempVar                            -1                                 -1                  
+1                                  T10                                int                                TempVar                            -1                                 -1                  
+1                                  T19                                TempVarType                        TempVar                            -1                                 -1                  
+1                                  T20                                bool                               TempVar                            -1                                 -1                  
+1                                  T21                                TempVarType                        TempVar                            -1                                 -1                  
