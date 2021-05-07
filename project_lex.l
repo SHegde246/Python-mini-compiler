@@ -77,19 +77,19 @@ static void printToken(const char *X)
  		if(flag)
  		{
  			fprintf(ftokens,"\n---------------------------------------------------------------Tokens-----------------------------------------------------------------\n  1 ");
- 			printf("---------------------------------Tokens--------------------------\n1 ");
+ 			//printf("---------------------------------Tokens--------------------------\n1 ");
  			flag=0;
  		}
  		
  		if(strcmp(X, "NL")==0)
  		{
  			fprintf(ftokens,"T_%s\n%s%d ", X, "  ", yylineno);
- 			printf("T_%s\n%d ", X, yylineno);
+ 			//printf("T_%s\n%d ", X, yylineno);
  		}
 		else
 		{
 			fprintf(ftokens,"T_%s ", X);
-			printf("T_%s ", X);	
+			//printf("T_%s ", X);	
 		}
  		#endif
  	}
@@ -132,7 +132,7 @@ sq_string '([^'\n])*'
 %%
 [\t]*	{
 		level=indentation_level(yytext);
-		printf("level is %d\n", level);
+		//printf("level is %d\n", level);
 		
 		if(level==top())
 		{
